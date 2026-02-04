@@ -40,6 +40,8 @@ Questions (Validaciones)
 ```
 
 ---
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/c8db0bd1-7a83-4152-b514-6f55276dafde" />
+
 
 ##  Patrón de Diseño
 
