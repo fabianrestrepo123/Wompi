@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group = 'co.wompi.qa'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityVersion = '4.1.14'
+    junitVersion = '5.10.1'
+}
+
+dependencies {
+    // Elimina duplicados y mantén solo una versión de cada dependencia
+    implementation('net.serenity-bdd:serenity-screenplay:2.2.0')
+    implementation "net.serenity-bdd:serenity-screenplay-rest:4.1.14"
+    testImplementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityVersion}"
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.14.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    testImplementation "net.serenity-bdd:serenity-screenplay-rest:${serenityVersion}"
+    testImplementation "io.rest-assured:rest-assured:5.4.0"
+    testImplementation "com.fasterxml.jackson.core:jackson-databind:2.17.0"
+    testImplementation "org.slf4j:slf4j-simple:2.0.12"
+}
+
+test {
+    // Elimina useJUnitPlatform()
+    systemProperties System.getProperties()
+}
